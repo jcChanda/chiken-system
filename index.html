@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f5ed">
+    <meta name="description" content="Meet the flock at Chicken & Grower. Browse chicken listings by age, breed, and availability.">
+    <title>chicken &amp; grower</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="announcement"><span>THE COUNTRY COOP CLUB</span> <i>✳</i> A FIELD GUIDE TO OUR FEATHERED FRIENDS</div>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Chicken and Grower home">
+        <span class="brand-mark" aria-hidden="true">c<span>&</span>g</span>
+        <span class="brand-name">chicken <span>&</span> grower</span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#chickens">Our chickens</a>
+        <a href="#our-way">Our way</a>
+      </nav>
+      <button class="admin-open button button-outline" id="admin-open" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8.2a3.8 3.8 0 1 0 0 7.6 3.8 3.8 0 0 0 0-7.6Zm8.1 4.9a8.1 8.1 0 0 0 0-2.2l1.6-1.2-1.6-2.8-1.9.7a8.2 8.2 0 0 0-1.9-1.1L16 4.5h-3.3l-.4 2a8.2 8.2 0 0 0-2 .8l-1.8-.9-1.9 2.6 1.4 1.5a8.1 8.1 0 0 0-.2 2.2l-1.6 1.2 1.6 2.8 1.9-.7a8.2 8.2 0 0 0 1.9 1.1l.3 2h3.3l.4-2a8.2 8.2 0 0 0 2-.8l1.8.9 1.9-2.6-1.4-1.5Z"/></svg>
+        <span>Farm admin</span>
+      </button>
+    </header>
+    <main id="home">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> FIELD NOTES · NO. 001</p>
+          <h1>A flock<br><span>of good eggs.</span></h1>
+          <p class="hero-intro">Meet our motley crew, one feathered personality at a time. Real breed photos, handy details, and a little farmyard charm.</p>
+          <a class="button button-dark" href="#chickens">Explore the flock <span aria-hidden="true">↗</span></a>
+          <div class="hero-note">
+            <div class="avatar-stack" aria-hidden="true"><span>🐓</span><span>🌿</span><span>🐔</span></div>
+            <p><strong>Raised with intention</strong><br>Care you can feel good about</p>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="hero-orbit orbit-one"></div>
+          <div class="hero-orbit orbit-two"></div>
+          <span class="sun-disc" aria-hidden="true"></span>
+          <img src="assets/hen-red.jpg" alt="Photograph of a Rhode Island Red hen">
+          <div class="hero-sticker"><span>✳</span><br>GOOD<br>EGG<br>ENERGY</div>
+          <div class="hero-caption"><span class="caption-line"></span><span>From our flock<br><small>Real birds, carefully raised</small></span></div>
+        </div>
+        <span class="hero-leaf leaf-a" aria-hidden="true">✳</span>
+        <span class="hero-leaf leaf-b" aria-hidden="true">✳</span>
+      </section>
+      <section class="trust-strip" aria-label="Our farm values">
+        <div><span class="trust-icon">✿</span><span>Thoughtfully raised</span></div>
+        <div><span class="trust-icon">⌂</span><span>Room to roam</span></div>
+        <div><span class="trust-icon">♡</span><span>Honest farm listings</span></div>
+        <div><span class="trust-icon">☼</span><span>Friendly local care</span></div>
+      </section>
+      <section class="flock-section" id="chickens">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-dot"></span> THE FEATHERED FIELD GUIDE</p>
+            <h2>Meet the <em>lineup.</em></h2>
+          </div>
+          <p class="section-description">Every bird has a little story. Browse by age, explore the details, and find your farm favorite.</p>
+        </div>
+        <div class="filter-row">
+          <div class="filter-tabs" role="group" aria-label="Filter chickens by age">
+            <button class="filter-tab active" type="button" data-age="all">All chickens <span id="count-all">0</span></button>
+            <button class="filter-tab" type="button" data-age="4">4 months</button>
+            <button class="filter-tab" type="button" data-age="5">5 months</button>
+            <button class="filter-tab" type="button" data-age="6">6+ months</button>
+          </div>
+          <label class="search-box">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg>
+            <input id="search-input" type="search" placeholder="Search the flock" aria-label="Search chickens by name or breed">
+          </label>
+        </div>
+        <p class="catalog-note">Breed reference photos; all listings, bird details, prices, and stock are sample entries. Confirm a bird’s details and availability with the farm.</p>
+        <p id="listing-status" class="listing-status" aria-live="polite"></p>
+        <div class="product-grid" id="product-grid"></div>
+        <div class="empty-state" id="empty-state" hidden><span>🐔</span><h3>No chickens found just yet.</h3><p>Try another age category or search.</p></div>
+      </section>
+      <section class="farm-story" id="our-way">
+        <div class="story-art">
+          <div class="story-blob"><img src="assets/hen-speckled.png" alt="Photograph of a barred Plymouth Rock chicken">
+          </div>
+          <span class="story-sun" aria-hidden="true">✳</span>
+          <span class="story-label">A happy hen<br>is a happy home.</span>
+        </div>
+        <div class="story-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> FROM THE FARM JOURNAL</p>
+          <h2>Small flock.<br><em>Big characters.</em></h2>
+          <p>We believe the best farm relationships start with the right information. That’s why every listing shares a bird’s age, breed, availability, and the details that make them who they are.</p>
+          <p>Our small flock is checked on daily, given space to stretch its wings, and cared for with patience. No guesswork—just good chickens and honest conversations.</p>
+          <a class="text-link" href="#chickens">Get to know the flock <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
+      <section class="closing-note">
+        <span class="closing-flower" aria-hidden="true">✳</span>
+        <p>Good things grow <em>together.</em></p>
+        <a href="#chickens" aria-label="Browse our chickens">Explore the flock <span aria-hidden="true">↗</span></a>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#home"><span class="brand-mark">c<span>&</span>g</span><span class="brand-name">chicken <span>&</span> grower</span></a>
+      <p>Small farm. Big heart. Happy flock.</p>
+      <span>© <span id="year"></span> Chicken & Grower Farm</span>
+      <div class="photo-credits">Chicken photos:
+        <a href="https://commons.wikimedia.org/wiki/File:Rhode_Island_Red_hen_-_geograph.org.uk_-_5455945.jpg" target="_blank" rel="noopener noreferrer">Rhode Island Red — Evelyn Simak, CC BY-SA 2.0</a> ·
+        <a href="https://commons.wikimedia.org/wiki/File:A_Barred_Rock_Chicken_Named_Rootrip.png" target="_blank" rel="noopener noreferrer">Barred Rock — Thememegodweather, CC0</a> ·
+        <a href="https://commons.wikimedia.org/wiki/File:Buff_Orpington_chicken,_UK.jpg" target="_blank" rel="noopener noreferrer">Buff Orpington — Pete Cooper, CC BY 2.0</a>
+      </div>
+    </footer>
+    <div class="modal-backdrop" id="details-modal" hidden>
+      <section class="details-dialog dialog" role="dialog" aria-modal="true" aria-labelledby="details-title">
+        <button class="icon-button close-modal" type="button" aria-label="Close chicken details">×</button>
+        <div id="details-content"></div>
+      </section>
+    </div>
+    <div class="modal-backdrop" id="admin-modal" hidden>
+      <section class="admin-dialog dialog" role="dialog" aria-modal="true" aria-labelledby="admin-title">
+        <div class="admin-heading">
+          <div><p class="eyebrow"><span class="eyebrow-dot"></span> FARM TOOLS</p><h2 id="admin-title">Flock <em>manager.</em></h2></div>
+          <button class="icon-button close-modal" type="button" aria-label="Close farm manager">×</button>
+        </div>
+        <p class="admin-intro">Manage chicken listings, prices, categories, and stock. Changes are saved in this browser.</p>
+        <div class="admin-toolbar"><p id="admin-count">0 listings</p><button id="add-product" class="button button-dark" type="button"><span>＋</span> Add a chicken</button></div>
+        <p id="admin-status" class="admin-status" aria-live="polite"></p>
+        <div class="admin-list" id="admin-list"></div>
+        <form class="product-form" id="product-form" hidden>
+          <div class="form-heading"><h3 id="form-title">Add a chicken</h3><button class="icon-button cancel-form" type="button" aria-label="Cancel editing">×</button></div>
+          <input type="hidden" id="product-id">
+          <div class="form-grid">
+            <label>Chicken name<input id="product-name" name="name" required maxlength="60" placeholder="e.g. Henrietta"></label>
+            <label>Breed<input id="product-breed" name="breed" required maxlength="60" placeholder="e.g. Rhode Island Red"></label>
+            <label>Age in months<input id="product-age" name="age" required type="number" min="4" max="36" step="1" placeholder="4"></label>
+            <label>Price<input id="product-price" name="price" required type="number" min="0" step="0.01" placeholder="45.00"></label>
+            <label>Available birds<input id="product-stock" name="stock" required type="number" min="0" step="1" placeholder="3"></label>
+            <label>Chicken photo<select id="product-image" name="image"><option value="assets/hen-red.jpg">Rhode Island Red hen</option><option value="assets/hen-speckled.png">Barred Plymouth Rock</option><option value="assets/hen-golden.jpg">Buff Orpington hen</option><option value="assets/maple-brahma.png">Brahma — Maple</option><option value="assets/daisy-copper-maran.png">Copper Maran — Daisy</option><option value="assets/marigold-porcelain-duc-clubantam.png">Porcelain D'uccle Bantam — Marigold</option></select></label>
+            <label class="form-full">Description<textarea id="product-description" name="description" required maxlength="360" rows="3" placeholder="A little about this chicken..."></textarea></label>
+            <label class="form-full">Characteristics<input id="product-traits" name="traits" required maxlength="120" placeholder="e.g. Calm nature · Red plumage"></label>
+          </div>
+          <div class="form-actions"><button type="button" class="button button-outline cancel-form">Cancel</button><button class="button button-dark" type="submit">Save listing</button></div>
+        </form>
+      </section>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
